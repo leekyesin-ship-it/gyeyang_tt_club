@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계양탁구클럽 - 디지털 명함</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;600;700;800;900&display=swap');
+        
+        body {
+            font-family: 'Gothic A1', sans-serif;
+            background: radial-gradient(circle at top left, #4c1d95, #1e1b4b, #0f172a);
+        }
+
+        /* 로고 스타일 및 그라데이션 */
+        .brand-purple {
+            background: linear-gradient(135deg, #6b21a8 0%, #4c1d95 50%, #3b0764 100%);
+        }
+
+        .gold-border {
+            border: 3px solid #facc15;
+        }
+
+        .gold-glow {
+            box-shadow: 0 0 25px rgba(250, 204, 21, 0.35);
+        }
+
+        .animate-bounce-gentle {
+            animation: bounceGentle 2s infinite;
+        }
+
+        @keyframes bounceGentle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        /* 카드 등장 애니메이션 */
+        .card-appear {
+            animation: cardAppear 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes cardAppear {
+            from { opacity: 0; transform: translateY(20px) scale(0.96); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 sm:p-6">
+
+    <!-- 명함 컨테이너 -->
+    <div class="w-full max-w-sm card-appear relative">
+        
+        <!-- 메인 명함 카트 (로고의 노란 테두리 감성 반영) -->
+        <div class="bg-white rounded-3xl overflow-hidden gold-border gold-glow shadow-2xl relative">
+            
+            <!-- 상단 헤더 영역 (보라색 그라데이션 + 탁구 아이콘) -->
+            <div class="brand-purple p-6 pb-7 text-white text-center relative overflow-hidden">
+                <!-- 배경 장식 (원형 및 탁구채 오버레이) -->
+                <div class="absolute -right-8 -top-8 w-32 h-32 bg-white/5 rounded-full blur-xl pointer-events-none"></div>
+                <div class="absolute -left-8 -bottom-8 w-32 h-32 bg-yellow-400/10 rounded-full blur-xl pointer-events-none"></div>
+
+                <!-- 로고 심볼 (로고 내 캐릭터/탁구채 일러스트 룩 앤 필) -->
+                <div class="relative z-10 flex justify-center mb-3">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-300 to-yellow-500 p-1 shadow-lg animate-bounce-gentle">
+                        <div class="w-full h-full bg-purple-900 rounded-full flex items-center justify-center relative overflow-hidden border border-yellow-200">
+                            <!-- 로고 그래픽 표현 (볼 & 투톤 라켓) -->
+                            <div class="flex items-center space-x-0.5">
+                                <i class="fa-solid fa-circle text-white text-xs drop-shadow-md mr-1"></i>
+                                <div class="w-7 h-7 rounded-full bg-red-500 border-2 border-yellow-300 flex items-center justify-center shadow-md">
+                                    <i class="fa-solid fa-table-tennis-paddle-ball text-xs text-white"></i>
+                                </div>
+                                <div class="w-7 h-7 rounded-full bg-blue-600 border-2 border-yellow-300 flex items-center justify-center shadow-md -ml-3">
+                                    <i class="fa-solid fa-table-tennis-paddle-ball text-xs text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 클럽명 -->
+                <h1 class="text-2xl font-black tracking-tight text-white drop-shadow-sm mb-0.5">계양탁구클럽</h1>
+                <p class="text-[11px] font-extrabold tracking-widest text-yellow-300 uppercase">GYEYANG PING PONG CLUB</p>
+
+                <!-- 로고 하단 해시태그 밴드 (레드/블루/그린 3색 리본 감성) -->
+                <div class="mt-4 flex justify-center items-center gap-1 text-[10px] font-extrabold">
+                    <span class="bg-red-500 text-white px-2 py-0.5 rounded-full shadow-sm">#NO_PAIN</span>
+                    <span class="bg-blue-600 text-white px-2 py-0.5 rounded-full shadow-sm">#NO_GAIN</span>
+                    <span class="bg-emerald-500 text-white px-2 py-0.5 rounded-full shadow-sm">#GYEYANG</span>
+                </div>
+            </div>
+
+            <!-- 관장 정보 프로필 -->
+            <div class="px-6 pt-5 pb-3 text-center border-b border-gray-100 bg-gradient-to-b from-purple-50/50 to-white">
+                <div class="inline-block px-3 py-1 bg-purple-100 text-purple-900 text-xs font-bold rounded-full mb-1">
+                    관장
+                </div>
+                <h2 class="text-2xl font-black text-gray-800 tracking-wider">이 영 숙</h2>
+                <p class="text-xs text-gray-500 mt-1 font-medium">최신 시설 · 회원 레슨 · 동호회 환영</p>
+            </div>
+
+            <!-- 주요 연락처 및 상세 정보 -->
+            <div class="p-6 space-y-3.5 bg-white">
+
+                <!-- 휴대폰 번호 (대표) -->
+                <a href="tel:010-5536-6900" class="flex items-center p-3.5 rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 hover:border-blue-300 transition-all group active:scale-[0.98]">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white flex items-center justify-center mr-3.5 shadow-md shadow-blue-500/20 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-mobile-screen text-lg"></i>
+                    </div>
+                    <div class="flex-1">
+                        <span class="text-[11px] font-bold text-blue-600 uppercase tracking-wider block">휴대전화 (관장)</span>
+                        <span class="text-base font-extrabold text-gray-800">010-5536-6900</span>
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-sm">
+                        <i class="fa-solid fa-phone text-xs"></i>
+                    </div>
+                </a>
+
+                <!-- 일반 전화 (클럽) -->
+                <a href="tel:032-545-7330" class="flex items-center p-3.5 rounded-2xl bg-gray-50 border border-gray-100 hover:border-gray-300 transition-all group active:scale-[0.98]">
+                    <div class="w-11 h-11 rounded-xl bg-purple-900 text-yellow-400 flex items-center justify-center mr-3.5 shadow-md shadow-purple-900/10 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-phone-flip text-base"></i>
+                    </div>
+                    <div class="flex-1">
+                        <span class="text-[11px] font-bold text-gray-500 tracking-wider block">구장 전화</span>
+                        <span class="text-base font-bold text-gray-800">032-545-7330</span>
+                    </div>
+                    <div class="w-8 h-8 rounded-full bg-gray-200 text-gray-700 flex items-center justify-center">
+                        <i class="fa-solid fa-phone text-xs"></i>
+                    </div>
+                </a>
+
+                <!-- 오시는 길 (주소) -->
+                <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+                    <div class="flex items-start">
+                        <div class="w-11 h-11 rounded-xl bg-red-500 text-white flex items-center justify-center mr-3.5 shrink-0 shadow-md shadow-red-500/20">
+                            <i class="fa-solid fa-location-dot text-base"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <span class="text-[11px] font-bold text-red-500 tracking-wider block">클럽 위치</span>
+                            <p class="text-xs font-bold text-gray-800 truncate mt-0.5">인천 계양구 계양문화로 145</p>
+                            <p class="text-[11px] text-gray-500 font-medium">(용종동, 홈플러스 계양점 인근)</p>
+                        </div>
+                    </div>
+                    <div class="mt-2.5 pt-2 border-t border-slate-200/60 flex gap-2">
+                        <button onclick="copyAddress()" class="flex-1 py-1.5 bg-white border border-slate-200 text-slate-700 rounded-lg text-xs font-bold hover:bg-slate-100 transition-colors flex items-center justify-center gap-1">
+                            <i class="fa-regular fa-copy text-[11px]"></i> 주소 복사
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 국민은행 입금 계좌 -->
+                <div class="p-3.5 rounded-2xl bg-amber-50/70 border border-amber-200/80 relative">
+                    <div class="flex items-center justify-between mb-1">
+                        <div class="flex items-center gap-1.5">
+                            <div class="w-5 h-5 rounded-full bg-amber-400 flex items-center justify-center text-[10px] font-black text-amber-900">
+                                KB
+                            </div>
+                            <span class="text-xs font-bold text-amber-900">회비 / 레슨비 입금 계좌</span>
+                        </div>
+                        <button onclick="copyAccount()" class="px-2.5 py-1 bg-amber-500 hover:bg-amber-600 active:scale-95 text-white rounded-lg text-[11px] font-extrabold transition-all shadow-sm flex items-center gap-1">
+                            <i class="fa-regular fa-copy"></i> 복사
+                        </button>
+                    </div>
+                    <div class="flex items-baseline justify-between mt-1 px-0.5">
+                        <span class="text-xs text-amber-800 font-semibold">국민은행</span>
+                        <span class="text-base font-black text-gray-900 tracking-tight font-mono">287701-04-358196</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 하단 풋터 메시지 -->
+            <div class="bg-gradient-to-r from-purple-900 to-indigo-900 text-white px-6 py-3 text-center">
+                <p class="text-xs font-semibold text-yellow-300">
+                    <i class="fa-solid fa-heart mr-1"></i>건강과 즐거움이 함께하는 공간
+                </p>
+            </div>
+
+        </div>
+
+        <!-- 하단 바로가기 팁 -->
+        <div class="text-center mt-4">
+            <p class="text-xs text-purple-200/80">전화번호나 계좌번호를 누르면 바로 연결됩니다.</p>
+        </div>
+    </div>
+
+    <!-- 토스트 알림 메시지 -->
+    <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-gray-900/95 text-white text-xs font-bold px-5 py-3 rounded-full shadow-2xl opacity-0 pointer-events-none transition-all duration-300 border border-gray-700 flex items-center gap-2 z-50">
+        <i class="fa-solid fa-circle-check text-yellow-400 text-sm"></i>
+        <span id="toast-msg">복사되었습니다.</span>
+    </div>
+
+    <script>
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.innerText = message;
+            
+            toast.classList.remove('opacity-0', 'translate-y-2');
+            toast.classList.add('opacity-100', 'translate-y-0');
+            
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', 'translate-y-2');
+            }, 2200);
+        }
+
+        function copyAccount() {
+            const account = "287701-04-358196";
+            navigator.clipboard.writeText(account).then(() => {
+                showToast("국민은행 계좌번호가 복사되었습니다!");
+            }).catch(() => {
+                // 폴백 복사 로직
+                const tempInput = document.createElement("input");
+                tempInput.value = account;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand("copy");
+                document.body.removeChild(tempInput);
+                showToast("국민은행 계좌번호가 복사되었습니다!");
+            });
+        }
+
+        function copyAddress() {
+            const address = "인천광역시 계양구 계양문화로 145";
+            navigator.clipboard.writeText(address).then(() => {
+                showToast("클럽 주소가 복사되었습니다!");
+            });
+        }
+    </script>
+</body>
+</html>
